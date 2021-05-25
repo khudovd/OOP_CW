@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<uml>
+  <object class="UMLProject" id="project">
+    <object class="DCDModel" framex="0,0,550,450" iconified="true" id="" internalid="dcdmodel0" name="DCD: OOP" selected="true">
+      <object class="ClassGR" id="" internalid="classgr0" uid="Desktop Application User" x="56" y="79">
+        <object class="DesignClass" id="designclass" internalid="designclass0" name="Card" stereotype="">
+          <object class="GenericClass" id="generic" internalid="genericclass0" name="Card"/>
+          <object id="attributes">
+            <object class="Attribute" id="" internalid="attribute0" name="power" scope="1" type="int" visibility="1"/>
+            <object class="Attribute" id="" internalid="attribute1" name="suit" scope="1" type="String" visibility="1"/>
+          </object>
+          <object id="methods">
+            <object class="Method" id="" internalid="method0" name="setPower" returntype="void" scope="1" visibility="2">
+              <object id="parameters">
+                <object class="MethodParameter" id="" internalid="methodparameter0" name="power" type="int"/>
+              </object>
+            </object>
+            <object class="Method" id="" internalid="method1" name="setSuit" returntype="void" scope="1" visibility="2">
+              <object id="parameters">
+                <object class="MethodParameter" id="" internalid="methodparameter1" name="suit" type="String"/>
+              </object>
+            </object>
+            <object class="Method" id="" internalid="method2" name="getPower" returntype="int" scope="1" visibility="2">
+              <object id="parameters"/>
+            </object>
+            <object class="Method" id="" internalid="method3" name="getSuit" returntype="String" scope="1" visibility="2">
+              <object id="parameters"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object class="ClassGR" id="" internalid="classgr1" uid="Desktop Application User" x="257" y="83">
+        <object class="DesignClass" id="designclass" internalid="designclass1" name="Deck" stereotype="">
+          <object class="GenericClass" id="generic" name="Deck"/>
+          <object id="attributes">
+            <object class="Attribute" id="" internalid="attribute14" name="list" scope="1" type="" visibility="1"/>
+          </object>
+          <object id="methods">
+            <object class="Method" id="" internalid="method12" name="randomDeal" returntype="void" scope="1" visibility="2">
+              <object id="parameters"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object class="ClassGR" id="" internalid="classgr2" uid="Desktop Application User" x="63" y="247">
+        <object class="DesignClass" id="designclass" internalid="designclass2" name="Table" stereotype="">
+          <object class="GenericClass" id="generic" internalid="genericclass2" name="Table"/>
+          <object id="attributes">
+            <object class="Attribute" id="" internalid="attribute6" name="house0" scope="1" type="" visibility="1"/>
+            <object class="Attribute" id="" internalid="attribute7" name="house1" scope="1" type="" visibility="1"/>
+            <object class="Attribute" id="" internalid="attribute8" name="house2" scope="1" type="" visibility="1"/>
+            <object class="Attribute" id="" internalid="attribute9" name="house3" scope="1" type="" visibility="1"/>
+          </object>
+          <object id="methods">
+            <object class="Method" id="" internalid="method10" name="getHouseStatus" returntype="boolean" scope="1" visibility="2">
+              <object id="parameters"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object class="ClassGR" id="" internalid="classgr3" uid="Desktop Application User" x="262" y="214">
+        <object class="DesignClass" id="designclass" internalid="designclass3" name="Player" stereotype="">
+          <object class="GenericClass" id="generic" internalid="genericclass3" name="Player"/>
+          <object id="attributes">
+            <object class="Attribute" id="" internalid="attribute4" name="score" scope="1" type="int" visibility="1"/>
+            <object class="Attribute" id="" internalid="attribute17" name="name" scope="1" type="String" visibility="1"/>
+          </object>
+          <object id="methods">
+            <object class="Method" id="" internalid="method8" name="setName" returntype="void" scope="1" visibility="2">
+              <object id="parameters">
+                <object class="MethodParameter" id="" internalid="methodparameter4" name="name" type="String"/>
+              </object>
+            </object>
+            <object class="Method" id="" internalid="method15" name="setScore" returntype="void" scope="1" visibility="2">
+              <object id="parameters">
+                <object class="MethodParameter" id="" internalid="methodparameter5" name="score" type="int"/>
+              </object>
+            </object>
+            <object class="Method" id="" internalid="method16" name="getName" returntype="String" scope="1" visibility="2">
+              <object id="parameters"/>
+            </object>
+            <object class="Method" id="" internalid="method17" name="getPoints" returntype="int" scope="1" visibility="2">
+              <object id="parameters"/>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</uml>
