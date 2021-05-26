@@ -1,14 +1,30 @@
 
 
-public class Card {
+public class Card implements Creation {
 //Attributes
 
     private int power;
     private String suit;
+    private int Score;
 
-
-
+//A=11
+//jqk=10
+//else =8
 // methods
+
+    public void createCard(int power, String suit){
+        setPower(power);
+        setSuit(suit);
+        setScore();
+
+    }
+
+    public void createCard(){
+        this.power = 0;
+        this.suit = null;
+    }
+
+    public void setScore()
 
 //getter & setter
     public int getPower() {
@@ -28,6 +44,9 @@ public class Card {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "{power=" + power + ", Suit=" + suit + "}";
+    }
 
 }
