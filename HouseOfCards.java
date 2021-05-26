@@ -1,7 +1,16 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class HouseOfCards {
 
     public static void main(String[] args) {
         //here u create all cards and put them to the deck
+
+
+
+
+
 
 
 
@@ -10,11 +19,14 @@ public class HouseOfCards {
             String[] StringArray2 = new String[]{ "Hearts","Diamonds","Clubs ","Spades"};
             for(int i = 1; i == 4; i++){
                 for(int j = 1; j == 13; j++){
-                    createCard()
+                    //createCard()
                 }
             }
 
         }
-        
+
+
+
+
     }
 }
