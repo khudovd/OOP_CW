@@ -3,7 +3,7 @@
 public class Card implements Creation {
 //Attributes
 
-    private int power;
+    private String power;
     private String suit;
     private int Score;
 
@@ -12,26 +12,38 @@ public class Card implements Creation {
 //else =8
 // methods
 
-    public void createCard(int power, String suit){
+    public void createCard(String power, String suit){
         setPower(power);
         setSuit(suit);
-        setScore();
+        setScore(power);
 
     }
 
     public void createCard(){
-        this.power = 0;
+        this.power = "0";
         this.suit = null;
     }
 
-    public void setScore()
+    public void setScore(String power){
+        if (power == "A"){
+            this.Score = 11;
+        }
+        else if (power == "J"|| power == "Q"||power == "K"){
+            this.Score = 10;
+        }
+        else{
+            this.Score = 8;
+        }
+
+
+    }
 
 //getter & setter
-    public int getPower() {
+    public String getPower() {
         return power;
     }
 
-    public void setPower(int power) {
+    public void setPower(String power) {
         this.power = power;
     }
 
