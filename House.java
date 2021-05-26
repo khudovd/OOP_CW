@@ -4,15 +4,13 @@ import java.util.List;
 public class House {
     private List<Card> house = new ArrayList<Card>();
     private int score;
-    private final int HOUSE_LIMIT = 31;
+    private static final int HOUSE_LIMIT = 31;
     private boolean active;
 
     public House() {
         house = new ArrayList<Card>();
         score = 0;
         active = true;
-
-
     }
 
     public int getScore() {
@@ -33,9 +31,11 @@ public class House {
         else active = true;
     }
     public void putCard(Card card){
-        house.add(card);
-        score+= card.getScore();
-        setActive();
+        if (active) {
+            house.add(card);
+            score += card.getScore();
+            setActive();
+        }
     }
 
     @Override
