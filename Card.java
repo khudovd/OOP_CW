@@ -19,6 +19,11 @@ public class Card implements Creation {
 
     }
 
+    @Override
+    public void createCard(int power, String suit) {
+
+    }
+
     public void createCard(){
         this.power = "0";
         this.suit = null;
