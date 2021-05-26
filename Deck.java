@@ -6,7 +6,7 @@ import java.util.List;
 public class Deck {
 //Attributes
     List<Card> deck = new ArrayList<Card>();
-    private Object Card;
+//    private Object Card;
 
 
 // methods
@@ -25,11 +25,14 @@ public class Deck {
     public void putCard(Card card){
         deck.add(card);
     }
-    public Card dealCard(){
-        Card temp = new Card();
-        temp = deck.get(0);
-        deck.remove(0);
-        return temp;
+    public Card dealCard() throws StatusException {
+        if (deck.toArray().length>0) {
+            Card temp = new Card();
+            temp = deck.get(0);
+            deck.remove(0);
+            return temp;
+        }
+        else throw new StatusException("Out of cards!");
     }
 
 }
