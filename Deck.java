@@ -21,8 +21,9 @@ public class Deck {
         this.cards = cards;
     }
 
-    public void putCard(Card){
-        Deck.add(Card);
+    public void putCard(Card card){
+        Deck.add(card);
 
     }
+
 }
