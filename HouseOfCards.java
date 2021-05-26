@@ -3,8 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HouseOfCards {
-
-<<<<<<< HEAD
+    
     public static void main(String[] args) {
         Card h1 = new Card("A","Hearts");
         Card h2 = new Card("2","Hearts");
