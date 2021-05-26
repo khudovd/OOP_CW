@@ -12,9 +12,9 @@ public class Card implements Creation {
 //else =8
 // methods
 
-    public void createCard(String power, String suit){
-        setPower(power);
-        setSuit(suit);
+    public Card(String power, String suit){
+        this.power=power;
+        this.suit=suit;
         setScore(power);
 
     }
