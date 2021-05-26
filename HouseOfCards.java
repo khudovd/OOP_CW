@@ -64,15 +64,7 @@ public class HouseOfCards {
         Card s12 = new Card("Q","Spades");
         Card s13 = new Card("K","Spades");
 
-
-
-=======
-    public static void main(String[] args) throws StatusException {
-        Card AH = new Card("A","Hearts");
-        Card AD = new Card("A","Diamonds");
-        Card AC = new Card("A","Clubs");
-        Card AS = new Card("A","Spades");
->>>>>>> e5176538bf5dd1922107753172e4f4894a881f4e
+        
 
         Deck deck = new Deck();
 
