@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class HouseOfCards {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws StatusException {
         Card AH = new Card("A","Hearts");
         Card AD = new Card("A","Diamonds");
         Card AC = new Card("A","Clubs");
