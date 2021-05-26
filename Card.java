@@ -19,29 +19,12 @@ public class Card implements Creation {
 
     }
 
-    @Override
-    public void createCard(int power, String suit) {
-
-    }
-
     public void createCard(){
         this.power = "0";
         this.suit = null;
     }
 
-    public void setScore(String power){
-        if (power == "A"){
-            this.Score = 11;
-        }
-        else if (power == "J"|| power == "Q"||power == "K"){
-            this.Score = 10;
-        }
-        else{
-            this.Score = 8;
-        }
 
-
-    }
 
 //getter & setter
     public String getPower() {
@@ -59,6 +42,25 @@ public class Card implements Creation {
     public void setSuit(String suit) {
         this.suit = suit;
     }
+
+    public int getScore() {
+        return Score;
+    }
+
+    public void setScore(String power){
+        if (power == "A"){
+            this.Score = 11;
+        }
+        else if (power == "J"|| power == "Q"||power == "K"){
+            this.Score = 10;
+        }
+        else{
+            this.Score = 8;
+        }
+
+
+    }
+
 
 
     @Override
