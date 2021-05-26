@@ -1,6 +1,6 @@
 
 
-public class Card implements Creation {
+public class Card{
 //Attributes
 
     private String power;
@@ -19,14 +19,10 @@ public class Card implements Creation {
 
     }
 
-    public void createCard(){
-        this.power = "0";
-        this.suit = null;
+    public Card() {
     }
 
-
-
-//getter & setter
+    //getter & setter
     public String getPower() {
         return power;
     }

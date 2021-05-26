@@ -37,4 +37,14 @@ public class House {
         score+= card.getScore();
         setActive();
     }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "house=" + house +
+                ", score=" + score +
+                ", HOUSE_LIMIT=" + HOUSE_LIMIT +
+                ", active=" + active +
+                '}';
+    }
 }

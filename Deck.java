@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
 public class Deck {
 //Attributes
-    List<Deck> cards = new ArrayList<Deck>();
+    List<Card> deck = new ArrayList<Card>();
     private Object Card;
 
 
@@ -13,17 +14,22 @@ public class Deck {
 
 
 //getter & setter
-    public List<Deck> getCards() {
-        return cards;
+    public int getSize(){
+        return deck.toArray().length;
     }
 
-    public void setCards(List<Deck> cards) {
-        this.cards = cards;
+    public void shuffle(){
+        Collections.shuffle(deck);
     }
 
     public void putCard(Card card){
-        Deck.add(card);
-
+        deck.add(card);
+    }
+    public Card dealCard(){
+        Card temp = new Card();
+        temp = deck.get(0);
+        deck.remove(0);
+        return temp;
     }
 
 }
