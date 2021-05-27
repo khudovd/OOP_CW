@@ -35,4 +35,10 @@ public class Deck {
         else throw new StatusException("Out of cards!");
     }
 
+    @Override
+    public String toString() {
+        return "Deck is{" +
+                "deck=" + deck +
+                '}'+deck.toArray().length;
+    }
 }
