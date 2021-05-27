@@ -3,8 +3,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HouseOfCards {
-    
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws StatusException {
         Card h1 = new Card("A","Hearts");
         Card h2 = new Card("2","Hearts");
         Card h3 = new Card("3","Hearts");
@@ -95,9 +95,7 @@ public class HouseOfCards {
         deck.putCard(d11);
         deck.putCard(d12);
         deck.putCard(d13);
-
-
-
+        
 
         deck.putCard(c1);
         deck.putCard(c2);
