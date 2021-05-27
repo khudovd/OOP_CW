@@ -1,16 +1,10 @@
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class HouseOfCards {
-    
-    public static void main(String[] args) {
 
-        JFrame f = new GUI();
-        f.pack();
-        f.setVisible(true);
-
+    public static void main(String[] args) throws StatusException {
         Card h1 = new Card("A","Hearts");
         Card h2 = new Card("2","Hearts");
         Card h3 = new Card("3","Hearts");
@@ -101,9 +95,7 @@ public class HouseOfCards {
         deck.putCard(d11);
         deck.putCard(d12);
         deck.putCard(d13);
-
-
-
+        
 
         deck.putCard(c1);
         deck.putCard(c2);
@@ -136,17 +128,8 @@ public class HouseOfCards {
         deck.shuffle();
 
         House houseI = new House();
-        House houseII = new House();
-        House houseIII = new House();
-        House houseIV = new House();
-        try {
-            houseI.putCard(deck.dealCard());
-        }
-        catch (StatusException e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
-        System.out.println("Card added");
+
+        houseI.putCard(deck.dealCard());
 
         System.out.println(houseI.toString());
 
