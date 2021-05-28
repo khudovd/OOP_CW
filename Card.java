@@ -53,7 +53,7 @@ public class Card{
             this.Score = 10;
         }
         else{
-            this.Score = 8;
+            this.Score = Integer.parseInt(power);
         }
 
 

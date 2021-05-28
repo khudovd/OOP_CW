@@ -2,44 +2,53 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GUI extends JFrame implements ActionListener throws StatusException{
-	
-	House house1;
-	House house2;
-	House house3;
-	House house4;
+public class GUI extends JFrame implements ActionListener{
+
+	House houseI;
+	House houseII;
+	House houseIII;
+	House houseIV;
 	Card cardInPlay;
-	
+	Deck deck;
+
 	JPanel contentPanel;
 	JPanel mainPanel;
 	JPanel buttonPanel;
-	
+
 	JButton bt1;
 	JButton bt2;
 	JButton bt3;
 	JButton bt4;
-	
+
 	JTextField tf1;
 	JTextField tf2;
-	
+
 	JLabel lb1;
 	JLabel lb2;
 	JLabel lb3;
 	JLabel lb4;
 
+	private final boolean active = true;
+
 	/*@Override
 	public void actionPerformed(ActionEvent e) {
-		
+
 	}*/
+	public  boolean checkHouses(House house1, House house2, House house3, House house4){
+		if(house1.isActive()!=active&&house2.isActive()!=active&&house3.isActive()!=active&&house4.isActive()!=active) return !active;
+		else return  active;
+	}
+
 	GUI(){
 		this.setTitle("House of cards");
 
-		house1 = new House();
-		house2 = new House();
-		house3 = new House();
-		house4 = new House();
+		houseI = new House();
+		houseII = new House();
+		houseIII = new House();
+		houseIV = new House();
 		cardInPlay = new Card();
-		
+		deck = new Deck();
+
 		contentPanel = (JPanel) this.getContentPane();
 
 		mainPanel = new JPanel();
@@ -82,29 +91,53 @@ public class GUI extends JFrame implements ActionListener throws StatusException
 	}
 	public void actionPerformed (ActionEvent evt){
 		String action = evt.getActionCommand();
-		if(action.equals("House I")){
-			if (house1.isActive()) 
-			{
-				try 
-				{
-					house1.putCard(cardInPlay);
-                    System.out.println(houseI.getScore() + " is score after u put card");
-                    break;
-                }
-				catch (StatusException e) 
-				{
-                        System.out.println("Pick different house");
-                }
+		System.out.println(deck.toString());
+		lb1.setText("Your card is"+cardInPlay.toString());
+		lb2.setText("House I-"+ houseI.getScore()+" House II-"+ houseII.getScore()+" House III-"+ houseIII.getScore()+" House IV-"+ houseIV.getScore());
+		lb3.setText("Player score is:" + (houseI.getPlayerScore()+houseII.getPlayerScore()+houseIII.getPlayerScore()+houseIV.getPlayerScore()));
+		lb4.setText("Please pick house to put the card in");
+		if(checkHouses(houseI,houseII,houseIII,houseIV)) {
+			if (action.equals("House I")) {
+				if (houseI.isActive()) {
+					try {
+						houseI.putCard(cardInPlay);
+						System.out.println(houseI.getScore() + " is score after u put card");
+					} catch (StatusException e) {
+						System.out.println("Pick different house");
+					}
+				}
+			} else if (action.equals("House II")) {
+				if (houseII.isActive()) {
+					try {
+						houseII.putCard(cardInPlay);
+						System.out.println(houseII.getScore() + " is score after u put card");
+					} catch (StatusException e) {
+						System.out.println("Pick different house");
+					}
+				}
+
+			} else if (action.equals("House III")) {
+				if (houseIII.isActive()) {
+					try {
+						houseIII.putCard(cardInPlay);
+						System.out.println(houseIII.getScore() + " is score after u put card");
+					} catch (StatusException e) {
+						System.out.println("Pick different house");
+					}
+				}
+
+			} else if (action.equals("House IV")) {
+				if (houseIV.isActive()) {
+					try {
+						houseIV.putCard(cardInPlay);
+						System.out.println(houseIV.getScore() + " is score after u put card");
+					} catch (StatusException e) {
+						System.out.println("Pick different house");
+					}
+				}
+
 			}
 		}
-		else if(action.equals("House II")){
-			
-		}
-		else if(action.equals("House III")){
-			
-		}
-		else if(action.equals("House IV")){
-			
-		}
+		else System.out.println("Gameover");
 	}
 }
