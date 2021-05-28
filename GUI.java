@@ -88,7 +88,7 @@ public class GUI extends JFrame implements ActionListener throws StatusException
 				try 
 				{
 					house1.putCard(cardInPlay);
-                    System.out.println(houseI.getScore() + " is score after u put card");
+                    System.out.println(house1.getScore() + " is score after u put card");
                     break;
                 }
 				catch (StatusException e) 
@@ -98,13 +98,52 @@ public class GUI extends JFrame implements ActionListener throws StatusException
 			}
 		}
 		else if(action.equals("House II")){
-			
+			if (house2.isActive()) 
+			{
+				try 
+				{
+					house2.putCard(cardInPlay);
+                    System.out.println(house2.getScore() + " is score after u put card");
+                    break;
+                }
+				catch (StatusException e) 
+				{
+                        System.out.println("Pick different house");
+                }
+			}
+		}
 		}
 		else if(action.equals("House III")){
-			
+			if (house3.isActive()) 
+			{
+				try 
+				{
+					house3.putCard(cardInPlay);
+                    System.out.println(house3.getScore() + " is score after u put card");
+                    break;
+                }
+				catch (StatusException e) 
+				{
+                        System.out.println("Pick different house");
+                }
+			}
+		}
 		}
 		else if(action.equals("House IV")){
-			
+			if (house4.isActive()) 
+			{
+				try 
+				{
+					house4.putCard(cardInPlay);
+                    System.out.println(house4.getScore() + " is score after u put card");
+                    break;
+                }
+				catch (StatusException e) 
+				{
+                        System.out.println("Pick different house");
+                }
+			}
+		}
 		}
 	}
 }
