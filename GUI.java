@@ -89,14 +89,14 @@ public class GUI extends JFrame implements ActionListener{
 		contentPanel.add(buttonPanel,BorderLayout.SOUTH);
 
 	}
-	public void actionPerformed (ActionEvent evt){
+	public void actionPerformed (ActionEvent evt) {
 		String action = evt.getActionCommand();
 		System.out.println(deck.toString());
-		lb1.setText("Your card is"+cardInPlay.toString());
-		lb2.setText("House I-"+ houseI.getScore()+" House II-"+ houseII.getScore()+" House III-"+ houseIII.getScore()+" House IV-"+ houseIV.getScore());
-		lb3.setText("Player score is:" + (houseI.getPlayerScore()+houseII.getPlayerScore()+houseIII.getPlayerScore()+houseIV.getPlayerScore()));
+		lb1.setText("Your card is" + cardInPlay.toString());
+		lb2.setText("House I-" + houseI.getScore() + " House II-" + houseII.getScore() + " House III-" + houseIII.getScore() + " House IV-" + houseIV.getScore());
+		lb3.setText("Player score is:" + (houseI.getPlayerScore() + houseII.getPlayerScore() + houseIII.getPlayerScore() + houseIV.getPlayerScore()));
 		lb4.setText("Please pick house to put the card in");
-		if(checkHouses(houseI,houseII,houseIII,houseIV)) {
+		if (checkHouses(houseI, houseII, houseIII, houseIV)) {
 			if (action.equals("House I")) {
 				if (houseI.isActive()) {
 					try {
@@ -137,7 +137,6 @@ public class GUI extends JFrame implements ActionListener{
 				}
 
 			}
-		}
-		else System.out.println("Gameover");
+		} else System.out.println("Gameover");
 	}
 }
