@@ -23,6 +23,10 @@ public class House {
         return score;
     }
 
+    public boolean getStatus(){
+        return active;
+    }
+
     public boolean isActive() {
         return active;
     }
@@ -31,6 +35,7 @@ public class House {
         if (score > 31) active = false;
         else if (score == 31){
             house.clear();
+            score  = 0;
             playerScore+=100;
         }
         else active = true;
@@ -43,6 +48,7 @@ public class House {
         }
         else throw new StatusException("This house is full!");
     }
+
 
     @Override
     public String toString() {

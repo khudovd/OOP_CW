@@ -19,8 +19,10 @@ public class Card{
 
     }
 
-    public Card() {
+    public Card(){
+
     }
+
 
     //getter & setter
     public String getPower() {
@@ -56,8 +58,6 @@ public class Card{
 
 
     }
-
-
 
     @Override
     public String toString() {
