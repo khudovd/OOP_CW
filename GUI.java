@@ -2,7 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GUI extends JFrame implements ActionListener{
+public class GUI extends JFrame implements ActionListener throws StatusException{
+	
+	House house1;
+	House house2;
+	House house3;
+	House house4;
+	Card cardInPlay;
+	
 	JPanel contentPanel;
 	JPanel mainPanel;
 	JPanel buttonPanel;
@@ -27,6 +34,12 @@ public class GUI extends JFrame implements ActionListener{
 	GUI(){
 		this.setTitle("House of cards");
 
+		house1 = new House();
+		house2 = new House();
+		house3 = new House();
+		house4 = new House();
+		cardInPlay = new Card();
+		
 		contentPanel = (JPanel) this.getContentPane();
 
 		mainPanel = new JPanel();
@@ -68,17 +81,29 @@ public class GUI extends JFrame implements ActionListener{
 
 	}
 	public void actionPerformed (ActionEvent evt){
-		String arg = evt.getActionCommand();
-		if(arg.equals("House I")){
+		String action = evt.getActionCommand();
+		if(action.equals("House I")){
+			if (house1.isActive()) 
+			{
+				try 
+				{
+					house1.putCard(cardInPlay);
+                    System.out.println(houseI.getScore() + " is score after u put card");
+                    break;
+                }
+				catch (StatusException e) 
+				{
+                        System.out.println("Pick different house");
+                }
+			}
+		}
+		else if(action.equals("House II")){
 			
 		}
-		else if(arg.equals("House II")){
+		else if(action.equals("House III")){
 			
 		}
-		else if(arg.equals("House III")){
-			
-		}
-		else if(arg.equals("House IV")){
+		else if(action.equals("House IV")){
 			
 		}
 	}
