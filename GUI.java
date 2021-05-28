@@ -20,10 +20,10 @@ public class GUI extends JFrame implements ActionListener{
 	JLabel lb3;
 	JLabel lb4;
 
-	@Override
+	/*@Override
 	public void actionPerformed(ActionEvent e) {
-
-	}
+		
+	}*/
 	GUI(){
 		this.setTitle("House of cards");
 
@@ -33,9 +33,13 @@ public class GUI extends JFrame implements ActionListener{
 		buttonPanel = new JPanel();
 
 		bt1 = new JButton("House I");
+		bt1.addActionListener(this);
 		bt2 = new JButton("House II");
+		bt2.addActionListener(this);
 		bt3 = new JButton("House III");
+		bt3.addActionListener(this);
 		bt4 = new JButton("House IV");
+		bt4.addActionListener(this);
 
 		lb1 = new JLabel();
 		lb2 = new JLabel();
@@ -62,5 +66,20 @@ public class GUI extends JFrame implements ActionListener{
 		contentPanel.add(mainPanel,BorderLayout.CENTER);
 		contentPanel.add(buttonPanel,BorderLayout.SOUTH);
 
+	}
+	public void actionPerformed (ActionEvent evt){
+		String arg = evt.getActionCommand();
+		if(arg.equals("House I")){
+			
+		}
+		else if(arg.equals("House II")){
+			
+		}
+		else if(arg.equals("House III")){
+			
+		}
+		else if(arg.equals("House IV")){
+			
+		}
 	}
 }
