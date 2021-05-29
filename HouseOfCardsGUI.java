@@ -17,7 +17,7 @@ public class HouseOfCardsGUI extends JFrame {
     private JLabel house3Score;
     private JLabel house4Score;
     private JLabel cardInPlayLabel;
-    private JLabel playerScoreLable;
+    private JLabel playerScoreLabel;
     private JLabel deckGetSizeLabel;
 
     private Card cardInPlay;
@@ -28,21 +28,22 @@ public class HouseOfCardsGUI extends JFrame {
 
     private static final boolean ACTIVE = true;
 
-    public static boolean checkHouses(House house1, House house2, House house3, House house4){
-        if(house1.isActive()!=ACTIVE &&house2.isActive()!=ACTIVE &&house3.isActive()!=ACTIVE&&house4.isActive()!=ACTIVE) return !ACTIVE;
+    public static boolean checkHouses(House house1, House house2, House house3, House house4) {
+        if (house1.isActive() != ACTIVE && house2.isActive() != ACTIVE && house3.isActive() != ACTIVE && house4.isActive() != ACTIVE)
+            return !ACTIVE;
         else return ACTIVE;
     }
 
-    public static String getPlayerScoreGUI(House house1,House house2,House house3,House house4){
-        int utilScore = house1.getPlayerScore()+house2.getPlayerScore()+house3.getPlayerScore()+house4.getPlayerScore();
+    public static String getPlayerScoreGUI(House house1, House house2, House house3, House house4) {
+        int utilScore = house1.getPlayerScore() + house2.getPlayerScore() + house3.getPlayerScore() + house4.getPlayerScore();
         return String.valueOf(utilScore);
     }
 
 
     public HouseOfCardsGUI(String title) {
         super(title);
-        this.setBackground(new Color(198,222,207));
-        this.setPreferredSize(new Dimension(650,400));
+        this.setBackground(new Color(93, 217, 148));
+        this.setPreferredSize(new Dimension(650, 400));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(houseOfCards);
         this.pack();
@@ -78,26 +79,30 @@ public class HouseOfCardsGUI extends JFrame {
                             house1.putCard(cardInPlay);
                             house1Score.setText(String.valueOf((house1.getScore())));
                             deckGetSizeLabel.setText(String.valueOf(deck.getSize()));
-                            playerScoreLable.setText(getPlayerScoreGUI(house1,house2,house3,house4));
+                            playerScoreLabel.setText(getPlayerScoreGUI(house1, house2, house3, house4));
                             cardInPlay = deck.dealCard();
                             cardInPlayLabel.setText(String.valueOf(cardInPlay));
-                            if (deck.getSize()==0){
-                                JOptionPane.showMessageDialog(null,"You win :)"+ " your points are:"+ getPlayerScoreGUI(house1,house2,house3,house4));
-                                // my adhd drives me crazy i want to eat rest code live at the same time xd just can't sit in one plce nvm
-                                //some help)) you can also ues isEmpty() idk i didnt see  such a method in deck class, or  its iniversal for lists?null ok
+                            if (deck.getSize() == 0) {
+                                JOptionPane.showMessageDialog(null, "You win :)" + " your points are:" + getPlayerScoreGUI(house1, house2, house3, house4));
                             }
-                        }
-                        else {
-                            JOptionPane.showMessageDialog(null,"This house is full");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "This house is full");
                             house1Button.setEnabled(!ACTIVE);
                         }
                     } catch (StatusException statusException) {
                         statusException.printStackTrace();
                     }
-                }
-                else {
-                    JOptionPane.showMessageDialog(null,"Game  over!");
+                } else {
+                    if (getPlayerScoreGUI(house1, house2, house3, house4).equals("0")) {
+                        JOptionPane.showMessageDialog(null, "Game  over!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "You finish the game with:" +
+                                getPlayerScoreGUI(house1, house2, house3, house4) + " points and the amount of cards left inside " +
+                                "the deck is:  " + (deck.getSize()+1));
+
+                    }
                     System.exit(0);
+
                 }
             }
         });
@@ -110,21 +115,27 @@ public class HouseOfCardsGUI extends JFrame {
                             house2.putCard(cardInPlay);
                             house2Score.setText(String.valueOf((house2.getScore())));
                             deckGetSizeLabel.setText(String.valueOf(deck.getSize()));
-                            playerScoreLable.setText(getPlayerScoreGUI(house1,house2,house3,house4));
+                            playerScoreLabel.setText(getPlayerScoreGUI(house1, house2, house3, house4));
                             cardInPlay = deck.dealCard();
                             cardInPlayLabel.setText(String.valueOf(cardInPlay));
-                        }
-                        else {
-                            JOptionPane.showMessageDialog(null,"This house is full");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "This house is full");
                             house2Button.setEnabled(!ACTIVE);
                         }
                     } catch (StatusException statusException) {
                         statusException.printStackTrace();
                     }
-                }
-                else {
-                    JOptionPane.showMessageDialog(null,"Game over :(");
+                } else {
+                    if (getPlayerScoreGUI(house1, house2, house3, house4).equals("0")) {
+                        JOptionPane.showMessageDialog(null, "Game  over!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "You finish the game with:" +
+                                getPlayerScoreGUI(house1, house2, house3, house4) + " points and the amount of cards left inside " +
+                                "the deck is:  " + (deck.getSize()+1));
+
+                    }
                     System.exit(0);
+
                 }
             }
         });
@@ -137,21 +148,27 @@ public class HouseOfCardsGUI extends JFrame {
                             house3.putCard(cardInPlay);
                             house3Score.setText(String.valueOf((house3.getScore())));
                             deckGetSizeLabel.setText(String.valueOf(deck.getSize()));
-                            playerScoreLable.setText(getPlayerScoreGUI(house1,house2,house3,house4));
+                            playerScoreLabel.setText(getPlayerScoreGUI(house1, house2, house3, house4));
                             cardInPlay = deck.dealCard();
                             cardInPlayLabel.setText(String.valueOf(cardInPlay));
-                        }
-                        else {
-                            JOptionPane.showMessageDialog(null,"This house is full");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "This house is full");
                             house3Button.setEnabled(!ACTIVE);
                         }
                     } catch (StatusException statusException) {
                         statusException.printStackTrace();
                     }
-                }
-                else {
-                    JOptionPane.showMessageDialog(null,"Game over :(");
+                } else {
+                    if (getPlayerScoreGUI(house1, house2, house3, house4).equals("0")) {
+                        JOptionPane.showMessageDialog(null, "Game  over!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "You finish the game with:" +
+                                getPlayerScoreGUI(house1, house2, house3, house4) + " points and the amount of cards left inside " +
+                                "the deck is:  " + (deck.getSize()+1));
+
+                    }
                     System.exit(0);
+
                 }
             }
         });
@@ -164,32 +181,30 @@ public class HouseOfCardsGUI extends JFrame {
                             house4.putCard(cardInPlay);
                             house4Score.setText(String.valueOf((house4.getScore())));
                             deckGetSizeLabel.setText(String.valueOf(deck.getSize()));
-                            playerScoreLable.setText(getPlayerScoreGUI(house1,house2,house3,house4));
+                            playerScoreLabel.setText(getPlayerScoreGUI(house1, house2, house3, house4));
                             cardInPlay = deck.dealCard();
                             cardInPlayLabel.setText(String.valueOf(cardInPlay));
-
-
-                        }
-                        else {
-                            JOptionPane.showMessageDialog(null,"This house is full");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "This house is full");
                             house4Button.setEnabled(!ACTIVE);
                         }
                     } catch (StatusException statusException) {
                         statusException.printStackTrace();
                     }
-                }
-                else {
-                    JOptionPane.showMessageDialog(null,"Game over :(");
+                } else {
+                    if (getPlayerScoreGUI(house1, house2, house3, house4).equals("0")) {
+                        JOptionPane.showMessageDialog(null, "Game  over!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "You finish the game with:" +
+                                getPlayerScoreGUI(house1, house2, house3, house4) + " points and the amount of cards left inside " +
+                                "the deck is:  " + (deck.getSize()+1));
+
+                    }
                     System.exit(0);
+
                 }
             }
         });
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new HouseOfCardsGUI("House of cards");
-        frame.setVisible(true);
-
-
-    }
 }
