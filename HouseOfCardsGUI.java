@@ -73,7 +73,20 @@ public class HouseOfCardsGUI extends JFrame {
         house1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (checkHouses(house1, house2, house3, house4)) {
+                if (deck.getSize() == 0) {
+                    try {
+                        house1.putCard(cardInPlay);
+                        house1Score.setText(String.valueOf((house1.getScore())));
+                        deckGetSizeLabel.setText(String.valueOf(deck.getSize()));
+                        playerScoreLabel.setText(getPlayerScoreGUI(house1, house2, house3, house4));
+                        cardInPlayLabel.setText("Out of cards!");
+                    } catch (StatusException statusException) {
+                        statusException.printStackTrace();
+                    }
+                    JOptionPane.showMessageDialog(null, "You win, the deck is empty. Your score is:"
+                            + getPlayerScoreGUI(house1, house2, house3, house4));
+                    System.exit(0);
+                } else if (checkHouses(house1, house2, house3, house4)) {
                     try {
                         if (house1.isActive()) {
                             house1.putCard(cardInPlay);
@@ -98,7 +111,7 @@ public class HouseOfCardsGUI extends JFrame {
                     } else {
                         JOptionPane.showMessageDialog(null, "You finish the game with:" +
                                 getPlayerScoreGUI(house1, house2, house3, house4) + " points and the amount of cards left inside " +
-                                "the deck is:  " + (deck.getSize()+1));
+                                "the deck is:  " + (deck.getSize() + 1));
 
                     }
                     System.exit(0);
@@ -109,7 +122,20 @@ public class HouseOfCardsGUI extends JFrame {
         house2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (checkHouses(house1, house2, house3, house4)) {
+                if (deck.getSize() == 0) {
+                    try {
+                        house2.putCard(cardInPlay);
+                        house2Score.setText(String.valueOf((house2.getScore())));
+                        deckGetSizeLabel.setText(String.valueOf(deck.getSize()));
+                        playerScoreLabel.setText(getPlayerScoreGUI(house1, house2, house3, house4));
+                        cardInPlayLabel.setText("Out of cards!");
+                    } catch (StatusException statusException) {
+                        statusException.printStackTrace();
+                    }
+                    JOptionPane.showMessageDialog(null, "You win, the deck is empty. Your score is:"
+                            + getPlayerScoreGUI(house1, house2, house3, house4));
+                    System.exit(0);
+                } else if (checkHouses(house1, house2, house3, house4)) {
                     try {
                         if (house2.isActive()) {
                             house2.putCard(cardInPlay);
@@ -131,7 +157,7 @@ public class HouseOfCardsGUI extends JFrame {
                     } else {
                         JOptionPane.showMessageDialog(null, "You finish the game with:" +
                                 getPlayerScoreGUI(house1, house2, house3, house4) + " points and the amount of cards left inside " +
-                                "the deck is:  " + (deck.getSize()+1));
+                                "the deck is:  " + (deck.getSize() + 1));
 
                     }
                     System.exit(0);
@@ -142,7 +168,20 @@ public class HouseOfCardsGUI extends JFrame {
         house3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (checkHouses(house1, house2, house3, house4)) {
+                if (deck.getSize() == 0) {
+                    try {
+                        house3.putCard(cardInPlay);
+                        house3Score.setText(String.valueOf((house3.getScore())));
+                        deckGetSizeLabel.setText(String.valueOf(deck.getSize()));
+                        playerScoreLabel.setText(getPlayerScoreGUI(house1, house2, house3, house4));
+                        cardInPlayLabel.setText("Out of cards!");
+                    } catch (StatusException statusException) {
+                        statusException.printStackTrace();
+                    }
+                    JOptionPane.showMessageDialog(null, "You win, the deck is empty. Your score is:"
+                            + getPlayerScoreGUI(house1, house2, house3, house4));
+                    System.exit(0);
+                } else if (checkHouses(house1, house2, house3, house4)) {
                     try {
                         if (house3.isActive()) {
                             house3.putCard(cardInPlay);
@@ -164,7 +203,7 @@ public class HouseOfCardsGUI extends JFrame {
                     } else {
                         JOptionPane.showMessageDialog(null, "You finish the game with:" +
                                 getPlayerScoreGUI(house1, house2, house3, house4) + " points and the amount of cards left inside " +
-                                "the deck is:  " + (deck.getSize()+1));
+                                "the deck is:  " + (deck.getSize() + 1));
 
                     }
                     System.exit(0);
@@ -175,7 +214,20 @@ public class HouseOfCardsGUI extends JFrame {
         house4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (checkHouses(house1, house2, house3, house4)) {
+                if (deck.getSize() == 0) {
+                    try {
+                        house4.putCard(cardInPlay);
+                        house4Score.setText(String.valueOf((house4.getScore())));
+                        deckGetSizeLabel.setText(String.valueOf(deck.getSize()));
+                        playerScoreLabel.setText(getPlayerScoreGUI(house1, house2, house3, house4));
+                        cardInPlayLabel.setText("Out of cards!");
+                    } catch (StatusException statusException) {
+                        statusException.printStackTrace();
+                    }
+                    JOptionPane.showMessageDialog(null, "You win, the deck is empty. Your score is:"
+                            + getPlayerScoreGUI(house1, house2, house3, house4));
+                    System.exit(0);
+                } else if (checkHouses(house1, house2, house3, house4)) {
                     try {
                         if (house4.isActive()) {
                             house4.putCard(cardInPlay);
@@ -197,14 +249,15 @@ public class HouseOfCardsGUI extends JFrame {
                     } else {
                         JOptionPane.showMessageDialog(null, "You finish the game with:" +
                                 getPlayerScoreGUI(house1, house2, house3, house4) + " points and the amount of cards left inside " +
-                                "the deck is:  " + (deck.getSize()+1));
+                                "the deck is:  " + (deck.getSize() + 1));
 
                     }
                     System.exit(0);
-
                 }
             }
         });
     }
 
 }
+
+
