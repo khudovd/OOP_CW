@@ -1,5 +1,3 @@
-
-
 public class Card{
 //Attributes
 
@@ -7,10 +5,7 @@ public class Card{
     private String suit;
     private int Score;
 
-//A=11
-//jqk=10
-//else =8
-// methods
+// consturctors
 
     public Card(String power, String suit){
         this.power=power;
@@ -19,10 +14,8 @@ public class Card{
 
     }
 
-    public Card(){
-
+    public Card() {
     }
-
 
     //getter & setter
     public String getPower() {
@@ -58,6 +51,8 @@ public class Card{
 
 
     }
+
+
 
     @Override
     public String toString() {

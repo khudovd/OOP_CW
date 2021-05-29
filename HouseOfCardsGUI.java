@@ -82,7 +82,7 @@ public class HouseOfCardsGUI extends JFrame {
                             cardInPlay = deck.dealCard();
                             cardInPlayLabel.setText(String.valueOf(cardInPlay));
                             if (deck.getSize()==0){
-                                JOptionPane.showMessageDialog(null,"You win :)"+ " your points are:"+ getScore());
+                                JOptionPane.showMessageDialog(null,"You win :)"+ " your points are:"+ getPlayerScoreGUI(house1,house2,house3,house4));
                                 // my adhd drives me crazy i want to eat rest code live at the same time xd just can't sit in one plce nvm
                                 //some help)) you can also ues isEmpty() idk i didnt see  such a method in deck class, or  its iniversal for lists?null ok
                             }

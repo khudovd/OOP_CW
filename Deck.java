@@ -2,9 +2,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Deck {
-    List<Card> deck = new ArrayList<Card>();
 
+public class Deck {
+    //Attributes
+    List<Card> deck = new ArrayList<Card>();
+//    private Object Card;
 
     public Deck(){
         //hearts
@@ -65,7 +67,11 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
-//getter & setter
+// methods
+
+
+
+    //getter & setter
     public int getSize(){
         return deck.toArray().length;
     }
@@ -74,9 +80,6 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
-    public void putCard(Card card){
-        deck.add(card);
-    }
     public Card dealCard() throws StatusException {
         if (deck.toArray().length>0) {
             Card temp = new Card();
