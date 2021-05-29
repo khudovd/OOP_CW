@@ -22,7 +22,7 @@ public class House {
     public int getScore() {
         return score;
     }
-    
+
     public boolean isActive() {
         return active;
     }

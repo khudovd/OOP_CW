@@ -3,7 +3,7 @@ public class Card{
 
     private String power;
     private String suit;
-    private int Score;
+    private int score;
 
 // consturctors
 
@@ -35,18 +35,18 @@ public class Card{
     }
 
     public int getScore() {
-        return Score;
+        return score;
     }
 
     public void setScore(String power){
         if (power == "A"){
-            this.Score = 11;
+            this.score = 11;
         }
         else if (power == "J"|| power == "Q"||power == "K"){
-            this.Score = 10;
+            this.score = 10;
         }
         else{
-            this.Score = Integer.parseInt(power);
+            this.score = Integer.parseInt(power);
         }
 
 
