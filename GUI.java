@@ -35,7 +35,7 @@ public class GUI extends JFrame implements ActionListener{
 
 	}*/
 	public  boolean checkHouses(House house1, House house2, House house3, House house4){
-		if(house1.isActive()!=active&&house2.isActive()!=active&&house3.isActive()!=active&&house4.isActive()!=active) return !active;
+		if(houseI.isActive()!=active&&houseII.isActive()!=active&&houseIII.isActive()!=active&&houseIV.isActive()!=active) return !active;
 		else return  active;
 	}
 
